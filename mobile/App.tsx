@@ -1,7 +1,7 @@
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { View, Text } from "react-native";
+
 import { Routes } from "./src/routes";
+import { ThemeProvider } from 'styled-components/native';
+import { theme } from "./src/styles/theme";
 
 
 
@@ -11,8 +11,8 @@ import { Routes } from "./src/routes";
 
 export default function App() {
   return (
-
+    <ThemeProvider theme={theme}>
        <Routes/>
-   
+    </ThemeProvider>
   );
 }
