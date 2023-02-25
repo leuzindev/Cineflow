@@ -7,6 +7,11 @@ export const BackgroundRegistration = styled.View`
 
 `
 
+export const BackgroundDefault = styled.View`
+    flex: 1;
+    background-color: #121214;
+`
+
 export const AreaLogo = styled.View`
     justify-content: center;
     align-items: center;
@@ -70,13 +75,14 @@ export const ButtonSignUpOutlined = styled.TouchableOpacity`
     justify-content: center;
     align-items: center;
     border-radius: 6px;
-
+    
 `
 
 export const LabelSignUpOutlined = styled.Text`
     color: white;
     font-weight: bold;
     font-size: 16px;
+   
 
     
 `

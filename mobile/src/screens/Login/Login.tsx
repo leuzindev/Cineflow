@@ -47,7 +47,7 @@ export function Login(){
                             placeholder="Password"
                         />
                         <BtnLoginSubmit
-                        
+                            onPress={() => navigate('profiles')}
                         >
                             <LabelLogin>Sign in</LabelLogin>
                         </BtnLoginSubmit>

@@ -1,18 +1,19 @@
-import { View, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Fundo } from "./styled";
+import { LogoHome, HeaderContainer, HamburgerSvg, AvatarSvg } from "./styled";
 
 
 
-
+import React from "react";
 export function Header(){
 
     return(
 
-        <SafeAreaView>
-           <Fundo>
-                <Text>HEADER</Text>
-           </Fundo>
-        </SafeAreaView>
+   
+           <HeaderContainer>
+                <HamburgerSvg/>
+                <LogoHome source={require('../../assets/logoHome.png')}/>
+                <AvatarSvg/>
+           </HeaderContainer>
+        
     )
 }
