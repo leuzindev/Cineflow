@@ -32,6 +32,10 @@ export const ProfileArea = styled.View`
 
 `
 
+export const AvatarRedirect = styled.TouchableOpacity`
+    align-items: center;
+`
+
 export const ProfileCompleted = styled.View`
     align-items: center;
     margin-left: 10px;
@@ -76,3 +80,4 @@ export const ButtonNewProfileOutlined = styled(ButtonSignUpOutlined)`
 export const LabelNewProfile = styled(LabelSignUpOutlined)`
     margin-right: 10px;
 `
+

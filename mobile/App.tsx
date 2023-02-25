@@ -1,5 +1,5 @@
 
-import { Routes } from "./src/routes";
+import { Routes } from "./src/routes/Register";
 import { ThemeProvider } from 'styled-components/native';
 import { theme } from "./src/styles/theme";
 

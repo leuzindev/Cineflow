@@ -1,16 +1,14 @@
-import { SafeAreaView, ScrollView, Text } from "react-native";
+import { SafeAreaView, Text } from "react-native"
 import { BackgroundDefault } from "../../styles/kitUi";
 
 
 
-export function Home(){
+export function YourProfile(){
 
     return(
         <BackgroundDefault>
             <SafeAreaView style={{ flex: 1 }}>
-                <ScrollView>
-                <Text>Home-page</Text>
-                </ScrollView>
+                <Text>Your-Profile</Text>
             </SafeAreaView>
         </BackgroundDefault>
 
