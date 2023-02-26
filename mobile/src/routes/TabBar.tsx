@@ -24,14 +24,10 @@ export function TabBar(){
                     height: 100
                 }
             }}
-
-            
         >
-
-            
             <Screen 
-                name="yourprofile" 
-                component={YourProfile}
+                name="search" 
+                component={Search}
                 options={{
                     tabBarIcon: ({ color, size, focused}) => {
                         if(focused){
@@ -53,9 +49,9 @@ export function TabBar(){
                     }
                 }}
             />
-             <Screen 
-                name="search" 
-                component={Search}
+            <Screen 
+                name="yourprofile" 
+                component={YourProfile}
                 options={{
                     tabBarIcon: ({ color, size, focused}) => {
                         if(focused){

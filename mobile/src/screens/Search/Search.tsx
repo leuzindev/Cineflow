@@ -1,16 +1,23 @@
-import { View, Text, SafeAreaView } from "react-native";
-import { BackgroundDefault } from "../../styles/kitUi";
+
+import { View, Text, SafeAreaView, StyleSheet  } from "react-native";
+import { Header } from "../../components/Header/Header";
+import { BackgroundDefault, ScrollHome, TitleLogin } from "../../styles/kitUi";
 
 
 
 export function Search(){
 
+            
+      
+
     return(
 
         <BackgroundDefault>
-            <SafeAreaView style={{ flex: 1 }}>
-                <Text>Search</Text>
-            </SafeAreaView>
+            <Header />
+            <ScrollHome>
+            <TitleLogin>Search</TitleLogin>
+
+            </ScrollHome>
         </BackgroundDefault>
     )
 }

@@ -1,10 +1,10 @@
+import { ScrollView } from "react-native";
 import styled from "styled-components/native";
 
 
 export const BackgroundRegistration = styled.View`
     background-color: #222223;
     flex: 1;
-
 `
 
 export const BackgroundDefault = styled.View`
@@ -17,7 +17,6 @@ export const AreaLogo = styled.View`
     align-items: center;
     height: 25%;
     width: 100%;
-
 `
 
 export const TitleLogin = styled.Text`
@@ -35,11 +34,9 @@ export const AreaForm = styled.View`
 `
 
 export const InputsArea = styled.View`
-
     align-items: center;
     justify-content: center;
     height: 75%;
-
 `
 
 export const LoginInputs = styled.TextInput`
@@ -49,7 +46,6 @@ export const LoginInputs = styled.TextInput`
     height: 56px;
     width: 85%;
     border-radius: 6px;
-  
 `
 
 export const BtnLoginSubmit = styled.TouchableOpacity`
@@ -60,7 +56,6 @@ export const BtnLoginSubmit = styled.TouchableOpacity`
     align-items: center;
     background-color: #FFFFFF;
     border-radius: 6px;
-    
 `
 
 export const LabelLogin = styled.Text`
@@ -75,15 +70,15 @@ export const ButtonSignUpOutlined = styled.TouchableOpacity`
     justify-content: center;
     align-items: center;
     border-radius: 6px;
-    
 `
 
 export const LabelSignUpOutlined = styled.Text`
     color: white;
     font-weight: bold;
     font-size: 16px;
-   
-
-    
 `
 
+export const ScrollHome = styled(ScrollView)`
+    
+
+`

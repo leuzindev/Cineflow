@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import { Image, Platform, SafeAreaView } from "react-native"
+import { Image, SafeAreaView } from "react-native"
 import Hamburger from '../../assets/hamburger.svg'
 import Avatar from '../../assets/avatar.svg'
 
