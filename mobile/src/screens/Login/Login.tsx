@@ -23,7 +23,8 @@ export function Login(){
     const styles = StyleSheet.create({
         placeholder: {
             paddingLeft: 20
-        }
+        },
+        
       });
 
     return(
