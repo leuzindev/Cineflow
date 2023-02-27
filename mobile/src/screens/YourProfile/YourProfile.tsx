@@ -1,67 +1,81 @@
 import React from "react";
-import { SafeAreaView, Text, TouchableOpacity, StyleSheet } from "react-native";
-import { Header } from "../../components/Header/Header";
-import { BackgroundDefault } from "../../styles/kitUi";
-import { 
-  AreaPhoto, PhotoAvatar, LabelChange, AreaFormData, InputData, 
-  InputDataOff, ChangePassArea, ChangeTitle, InputsChangePassword, AreaTitleChange, ScrollProfile 
+import { TouchableOpacity, StyleSheet, ScrollView, View } from "react-native";
+import { HeaderProfile } from "../../components/HeaderProfile/HeaderProfile";
+import { BackgroundDefault, LabelLogin } from "../../styles/kitUi";
+import {
+  AreaPhoto,
+  PhotoAvatar,
+  LabelChange,
+  AreaFormData,
+  InputData,
+  InputDataOff,
+  AreaChangePassword,
+  InputChange,
+  ChangeTitle,
+  AreaTitleChange,
+  UpdateBtn,
 } from "./styled";
 
 export function YourProfile() {
-
   const styles = StyleSheet.create({
     placeholder: {
-        paddingLeft: 20,
-        color: '#C4C4CC',
-    },
-    placeholderOff:{
       paddingLeft: 20,
-      color: '#C4C4CC'
-  }
+      color: "white",
+    },
+    placeholderOff: {
+      paddingLeft: 20,
+      color: "#C4C4CC",
+    },
   });
-
 
   return (
     <BackgroundDefault>
-      <Header />
-      <ScrollProfile>
+      <HeaderProfile />
+
       <AreaPhoto>
         <PhotoAvatar source={require("../../assets/Avatar.png")} />
         <TouchableOpacity>
           <LabelChange>Change Photo</LabelChange>
         </TouchableOpacity>
       </AreaPhoto>
-      <AreaFormData>
-        <InputData 
-          style={styles.placeholder}
-          value="Leonardo Soares"
-          editable={false}
-        />
-        <InputDataOff 
-          style={styles.placeholderOff}
-          value="Leonardo@gmail.com"
-          editable={false}
-        />
-
-        </AreaFormData>
-        <AreaTitleChange>
-          <ChangeTitle>Change password</ChangeTitle>
-        </AreaTitleChange>
-        <ChangePassArea>
-        <InputsChangePassword
+    
+        <AreaFormData>
+          <InputData
             style={styles.placeholder}
-            placeholder="Old password"
+            placeholderTextColor="#7C7C8A"
+            placeholder="Username"
+            value="Leonardo Soares"
+            editable={false}
+          />
+          <InputDataOff
+            style={styles.placeholderOff}
+            placeholderTextColor="#7C7C8A"
+            placeholder="E-mail"
+            value="Leonardo@gmail.com"
+            editable={false}
+          />
+          
+          <AreaChangePassword>
+          <AreaTitleChange>
+            <ChangeTitle>Change Password</ChangeTitle>
+          </AreaTitleChange>
+            <InputChange 
+              placeholderTextColor="#7C7C8A"
+              style={styles.placeholder}
+              placeholder="Old password"
             
-        />
-        <InputsChangePassword
-            style={styles.placeholder}
-            placeholder="New password"
-        />
-      </ChangePassArea>
-      
-    </ScrollProfile>
-
-      
+            />
+            <InputChange 
+              placeholderTextColor="#7C7C8A"
+              style={styles.placeholder}
+              placeholder="New password"
+            />
+          </AreaChangePassword>
+          <UpdateBtn>
+            <LabelLogin>Update</LabelLogin>
+          </UpdateBtn>
+        </AreaFormData>
     </BackgroundDefault>
   );
 }
+

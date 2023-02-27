@@ -26,3 +26,10 @@ export const AvatarSvg = styled(Avatar)`
   
     object-fit: contain;
 `
+
+export const LabelProfile = styled.Text`
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+
+`

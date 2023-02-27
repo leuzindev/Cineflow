@@ -1,5 +1,5 @@
 import { SafeAreaView,  } from "react-native-safe-area-context";
-import { LogoHome, HeaderContainer, HamburgerSvg, AvatarSvg } from "./styled";
+import { LogoHome, HeaderContainer, HamburgerSvg, AvatarSvg, LabelProfile } from "./styled";
 import { StyleSheet  } from "react-native";
 
 
@@ -22,9 +22,7 @@ export function HeaderProfile(){
 
        <SafeAreaView style={styles.container}>
 
-           <HamburgerSvg/>
-           <LogoHome source={require('../../assets/logoHome.png')}/>
-           <AvatarSvg/>
+           <LabelProfile>Profile</LabelProfile>
 
        </SafeAreaView>
      
