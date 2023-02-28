@@ -1,21 +1,26 @@
 import { useState, useEffect } from "react";
-import { TouchableOpacity } from "react-native";
+import { TouchableOpacity, TextInput } from "react-native";
 import { HeaderSearch } from "../../components/HeaderSearch/HeaderSearch";
 import { MoviesApi } from "../../lib/axios";
 import { BackgroundDefault } from "../../styles/kitUi";
 import { Movie } from "../Home/styled";
-import { AreaMovies, AreaTotalSearch, SpaceForSearch, TitleSearch } from "./styled";
-
+import {
+  AreaMovies,
+  AreaTotalSearch,
+  SpaceForSearch,
+  TitleSearch,
+} from "./styled";
 
 interface Movie {
-    imdbID: string;
-    Title: string;
-    Year: string;
-    Poster: string;
-  }
+  imdbID: string;
+  Title: string;
+  Year: string;
+  Poster: string;
+}
 
 export function Search() {
   const [movies, setMovies] = useState<Movie[]>([]);
+  const [searchMovie, setSearchMovie] = useState("");
 
   async function loadMovies(): Promise<void> {
     try {
@@ -39,29 +44,20 @@ export function Search() {
       <SpaceForSearch />
       <AreaTotalSearch>
         <TitleSearch>You are looking for ...</TitleSearch>
-       
-        <AreaMovies
-            horizontal={true}
-        >
-        {movies.map((movie: Movie) => {
+        <AreaMovies horizontal={true}>
+          {movies.map((movie: Movie) => {
             if (movie.Poster !== "N/A") {
-                return (
-                <TouchableOpacity
-                    key={movie.imdbID}
-                >
-                    <Movie
-                        
-                        source={{ uri: movie.Poster }}
-                        style={{ width: 200, height: 300 }}
-                    />
+              return (
+                <TouchableOpacity key={movie.imdbID}>
+                  <Movie
+                    source={{ uri: movie.Poster }}
+                    style={{ width: 200, height: 300 }}
+                  />
                 </TouchableOpacity>
-                );
+              );
             }
-            })}
-        
+          })}
         </AreaMovies>
-        
-     
       </AreaTotalSearch>
     </BackgroundDefault>
   );

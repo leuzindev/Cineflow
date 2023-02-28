@@ -35,8 +35,7 @@ export function Profiles() {
           <ProfileArea>
             <FirstProfiles>
               <ProfileCompleted>
-                <AvatarRedirect 
-                    onPress={() => navigate("redirect")}>
+                <AvatarRedirect onPress={() => navigate("redirect")}>
                   <AvatarIcon
                     source={require("../../assets/avatar_profile1.png")}
                   />

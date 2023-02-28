@@ -1,3 +1,4 @@
+
 export declare global {
     namespace ReactNavigation {
         interface RootParamList {
@@ -5,7 +6,7 @@ export declare global {
             register: undefined;
             profiles: undefined;
             redirect: undefined;
-
+            movie: { movie: IMovie };
         }
     }
 }

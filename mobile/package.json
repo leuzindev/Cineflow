@@ -11,6 +11,7 @@
   "dependencies": {
     "@react-navigation/bottom-tabs": "^6.5.6",
     "@react-navigation/devtools": "^6.0.17",
+    "@react-navigation/drawer": "^6.6.2",
     "@react-navigation/native": "^6.1.5",
     "@react-navigation/native-stack": "^6.9.11",
     "@react-navigation/stack": "^6.3.15",

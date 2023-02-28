@@ -38,44 +38,42 @@ export function YourProfile() {
           <LabelChange>Change Photo</LabelChange>
         </TouchableOpacity>
       </AreaPhoto>
-    
-        <AreaFormData>
-          <InputData
-            style={styles.placeholder}
-            placeholderTextColor="#7C7C8A"
-            placeholder="Username"
-            value="Leonardo Soares"
-            editable={false}
-          />
-          <InputDataOff
-            style={styles.placeholderOff}
-            placeholderTextColor="#7C7C8A"
-            placeholder="E-mail"
-            value="Leonardo@gmail.com"
-            editable={false}
-          />
-          
-          <AreaChangePassword>
+
+      <AreaFormData>
+        <InputData
+          style={styles.placeholder}
+          placeholderTextColor="#7C7C8A"
+          placeholder="Username"
+          value="Leonardo Soares"
+          editable={false}
+        />
+        <InputDataOff
+          style={styles.placeholderOff}
+          placeholderTextColor="#7C7C8A"
+          placeholder="E-mail"
+          value="Leonardo@gmail.com"
+          editable={false}
+        />
+
+        <AreaChangePassword>
           <AreaTitleChange>
             <ChangeTitle>Change Password</ChangeTitle>
           </AreaTitleChange>
-            <InputChange 
-              placeholderTextColor="#7C7C8A"
-              style={styles.placeholder}
-              placeholder="Old password"
-            
-            />
-            <InputChange 
-              placeholderTextColor="#7C7C8A"
-              style={styles.placeholder}
-              placeholder="New password"
-            />
-          </AreaChangePassword>
-          <UpdateBtn>
-            <LabelLogin>Update</LabelLogin>
-          </UpdateBtn>
-        </AreaFormData>
+          <InputChange
+            placeholderTextColor="#7C7C8A"
+            style={styles.placeholder}
+            placeholder="Old password"
+          />
+          <InputChange
+            placeholderTextColor="#7C7C8A"
+            style={styles.placeholder}
+            placeholder="New password"
+          />
+        </AreaChangePassword>
+        <UpdateBtn>
+          <LabelLogin>Update</LabelLogin>
+        </UpdateBtn>
+      </AreaFormData>
     </BackgroundDefault>
   );
 }
-
