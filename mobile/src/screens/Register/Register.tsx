@@ -37,7 +37,7 @@ export function Register() {
             <LoginInputs
               style={styles.placeholder}
               placeholderTextColor="#7C7C8A"
-              placeholder="Nome"
+              placeholder="Username"
             />
             <LoginInputs
               style={styles.placeholder}

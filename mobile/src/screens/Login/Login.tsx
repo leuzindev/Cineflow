@@ -17,9 +17,40 @@ import {
 import { TitleSignUp, AreaSignUp } from "./styled";
 
 import { useNavigation } from "@react-navigation/native";
+import { useState } from "react";
+import { LoginApi } from "../../lib/axios";
 
 export function Login() {
   const { navigate } = useNavigation();
+
+  const [name, setName] = useState<string>('');
+  const [password, setPassword] = useState('');
+
+
+
+  const login = async () => {
+    try{
+      const res = await LoginApi.post('login/', {
+        username: name,
+        password: password,
+      });
+      const token = res.data.access
+      console.log(name);
+      console.log(password);
+      console.log(token);
+      return token;
+
+    }catch (error) {
+      
+      console.error(error);
+    }
+
+   
+
+  }
+
+
+
 
   const styles = StyleSheet.create({
     placeholder: {
@@ -40,14 +71,16 @@ export function Login() {
             <LoginInputs
               style={styles.placeholder}
               placeholderTextColor="#7C7C8A"
-              placeholder="E-mail"
+              placeholder="Username"
+              onChangeText={(value) => setName(value)}
             />
             <LoginInputs
               style={styles.placeholder}
               placeholderTextColor="#7C7C8A"
               placeholder="Password"
+              onChangeText={(value) => setPassword(value)}
             />
-            <BtnLoginSubmit onPress={() => navigate("profiles")}>
+            <BtnLoginSubmit onPress={login}>
               <LabelLogin>Sign in</LabelLogin>
             </BtnLoginSubmit>
           </AreaForm>

@@ -9,7 +9,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include('auth.urls')),
-    path('v1/', include('profiles.urls')),
+
 ]
 
 if settings.DEBUG:

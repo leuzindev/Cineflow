@@ -1,4 +1,5 @@
-import { ScrollView } from "react-native-gesture-handler";
+
+import { ScrollView } from "react-native";
 import styled from "styled-components/native";
 
 export const MoviesCarouselArea = styled(ScrollView)``;
@@ -9,7 +10,6 @@ export const Movie = styled.Image`
 
 export const AreaWelcome = styled.View`
   justify-content: flex-end;
-
   height: 3%;
 `;
 
