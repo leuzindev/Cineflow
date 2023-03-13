@@ -17,8 +17,9 @@ import {
 import { TitleSignUp, AreaSignUp } from "./styled";
 
 import { useNavigation } from "@react-navigation/native";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { LoginApi } from "../../lib/axios";
+import axios from "axios";
 
 export function Login() {
   const { navigate } = useNavigation();
@@ -35,21 +36,14 @@ export function Login() {
         password: password,
       });
       const token = res.data.access
-      console.log(name);
-      console.log(password);
-      console.log(token);
       return token;
-
     }catch (error) {
-      
       console.error(error);
     }
-
+  
    
-
+    
   }
-
-
 
 
   const styles = StyleSheet.create({

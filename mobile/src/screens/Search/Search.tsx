@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import { useState, useEffect } from "react";
 import { TouchableOpacity, TextInput } from "react-native";
 import { HeaderSearch } from "../../components/HeaderSearch/HeaderSearch";
@@ -19,6 +20,9 @@ interface Movie {
 }
 
 export function Search() {
+
+  const { navigate } = useNavigation();
+
   const [movies, setMovies] = useState<Movie[]>([]);
   const [searchMovie, setSearchMovie] = useState("");
 
@@ -48,7 +52,10 @@ export function Search() {
           {movies.map((movie: Movie) => {
             if (movie.Poster !== "N/A") {
               return (
-                <TouchableOpacity key={movie.imdbID}>
+                <TouchableOpacity 
+                  key={movie.imdbID}
+                  onPress={() => navigate("movie", { movie })}  
+                >
                   <Movie
                     source={{ uri: movie.Poster }}
                     style={{ width: 200, height: 300 }}
