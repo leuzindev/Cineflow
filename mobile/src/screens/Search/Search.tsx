@@ -18,9 +18,7 @@ interface Movie {
   Year: string;
   Poster: string;
 }
-
 export function Search() {
-
   const { navigate } = useNavigation();
 
   const [movies, setMovies] = useState<Movie[]>([]);
@@ -28,7 +26,7 @@ export function Search() {
 
   async function loadMovies(): Promise<void> {
     try {
-      const res = await MoviesApi.get("?s=All&apikey=d5e4507a");
+      const res = await MoviesApi.get(`?s=${searchMovie}&apikey=d5e4507a`);
       const filteredMovies = res.data.Search.filter(
         (movie: Movie) => movie.Poster !== "N/A"
       );
@@ -40,11 +38,15 @@ export function Search() {
 
   useEffect(() => {
     loadMovies();
-  }, []);
+  }, [searchMovie]);
+
+  function handleSearchMovie(text: string) {
+    setSearchMovie(text);
+  }
 
   return (
     <BackgroundDefault>
-      <HeaderSearch />
+      <HeaderSearch onSubmitEditing={() => loadMovies()} onTextChange={handleSearchMovie} />
       <SpaceForSearch />
       <AreaTotalSearch>
         <TitleSearch>You are looking for ...</TitleSearch>

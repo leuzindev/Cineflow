@@ -1,19 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { TouchableOpacity, StyleSheet, ScrollView, View } from "react-native";
 import { HeaderProfile } from "../../components/HeaderProfile/HeaderProfile";
+import { UserContext } from "../../context/user";
 import { BackgroundDefault, LabelLogin } from "../../styles/kitUi";
 import {
-  AreaPhoto,
-  PhotoAvatar,
-  LabelChange,
-  AreaFormData,
-  InputData,
-  InputDataOff,
-  AreaChangePassword,
-  InputChange,
-  ChangeTitle,
-  AreaTitleChange,
-  UpdateBtn,
+  AreaPhoto,PhotoAvatar,LabelChange,AreaFormData,
+  InputData,InputDataOff,AreaChangePassword,InputChange
+  ,ChangeTitle,AreaTitleChange,UpdateBtn,
 } from "./styled";
 
 export function YourProfile() {
@@ -28,6 +21,8 @@ export function YourProfile() {
     },
   });
 
+  const { userName } = useContext(UserContext);
+  
   return (
     <BackgroundDefault>
       <HeaderProfile />
@@ -44,14 +39,14 @@ export function YourProfile() {
           style={styles.placeholder}
           placeholderTextColor="#7C7C8A"
           placeholder="Username"
-          value="Leonardo Soares"
+          value={userName}
           editable={false}
         />
         <InputDataOff
           style={styles.placeholderOff}
           placeholderTextColor="#7C7C8A"
           placeholder="E-mail"
-          value="Leonardo@gmail.com"
+          value="**********@gmail.com"
           editable={false}
         />
 
@@ -63,11 +58,13 @@ export function YourProfile() {
             placeholderTextColor="#7C7C8A"
             style={styles.placeholder}
             placeholder="Old password"
+            secureTextEntry={true}
           />
           <InputChange
             placeholderTextColor="#7C7C8A"
             style={styles.placeholder}
             placeholder="New password"
+            secureTextEntry={true}
           />
         </AreaChangePassword>
         <UpdateBtn>

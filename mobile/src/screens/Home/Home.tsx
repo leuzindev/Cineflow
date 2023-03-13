@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { MoviesApi } from "../../lib/axios";
 
 import { Image, TouchableOpacity } from "react-native";
@@ -17,6 +17,8 @@ import {
   SubTitle,
   TitleWelcome,
 } from "./styled";
+import { UserContext } from "../../context/user";
+
 
 export interface IMovie {
   imdbID: string;
@@ -29,7 +31,12 @@ export function Home() {
 
   const { navigate } = useNavigation();
 
+  
   const [movies, setMovies] = useState<IMovie[]>([]);
+  const [moviesTwo, setMoviesTwo] = useState<IMovie[]>([]);
+  const [moviesThree, setMoviesThree] = useState<IMovie[]>([]);
+  const [moviesFour, setMoviesFour] = useState<IMovie[]>([]);
+  const [moviesFive, setMoviesFive] = useState<IMovie[]>([]);
 
   async function loadMovies(): Promise<void> {
     try {
@@ -42,10 +49,59 @@ export function Home() {
       console.log(error);
     }
   }
-
+  async function loadMoviesTwo(): Promise<void> {
+    try {
+      const res = await MoviesApi.get("?s=Batman&apikey=d5e4507a");
+      const filteredMovies = res.data.Search.filter(
+        (movie: IMovie) => movie.Poster !== "N/A"
+      );
+      setMoviesTwo(filteredMovies);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  async function loadMoviesThree(): Promise<void> {
+    try {
+      const res = await MoviesApi.get("?s=All&apikey=d5e4507a");
+      const filteredMovies = res.data.Search.filter(
+        (movie: IMovie) => movie.Poster !== "N/A"
+      );
+      setMoviesThree(filteredMovies);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  async function loadMoviesFour(): Promise<void> {
+    try {
+      const res = await MoviesApi.get("?s=Action&apikey=d5e4507a");
+      const filteredMovies = res.data.Search.filter(
+        (movie: IMovie) => movie.Poster !== "N/A"
+      );
+      setMoviesFour(filteredMovies);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  async function loadMoviesFive(): Promise<void> {
+    try {
+      const res = await MoviesApi.get("?s=Marvel&apikey=d5e4507a");
+      const filteredMovies = res.data.Search.filter(
+        (movie: IMovie) => movie.Poster !== "N/A"
+      );
+      setMoviesFive(filteredMovies);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+ 
+  const { userName } = useContext(UserContext);
   
   useEffect(() => {
     loadMovies();
+    loadMoviesTwo();
+    loadMoviesThree();
+    loadMoviesFour();
+    loadMoviesFive();
   }, []);
 
   return (
@@ -53,7 +109,7 @@ export function Home() {
       <Header />
       <ScrollHome>
         <AreaWelcome>
-          <TitleWelcome>Welcome, Leonardo</TitleWelcome>
+          <TitleWelcome>Welcome, {userName}</TitleWelcome>
         </AreaWelcome>
 
         <AreaSubtitle>
@@ -81,7 +137,7 @@ export function Home() {
           <SubTitle>Only at CineFlow</SubTitle>
         </AreaSubtitle>
         <MoviesCarouselArea horizontal={true}>
-          {movies.map((movie: IMovie) => {
+          {moviesTwo.map((movie: IMovie) => {
             if (movie.Poster !== "N/A") {
               return (
                 <TouchableOpacity 
@@ -111,7 +167,7 @@ export function Home() {
           <SubTitle>Critically acclaimed</SubTitle>
         </AreaSubtitle>
         <MoviesCarouselArea horizontal={true}>
-          {movies.map((movie: IMovie) => {
+          {moviesThree.map((movie: IMovie) => {
             if (movie.Poster !== "N/A") {
               return (
                 <TouchableOpacity 
@@ -132,7 +188,7 @@ export function Home() {
           <SubTitle>Only for you</SubTitle>
         </AreaSubtitle>
         <MoviesCarouselArea horizontal={true}>
-          {movies.map((movie: IMovie) => {
+          {moviesFour.map((movie: IMovie) => {
             if (movie.Poster !== "N/A") {
               return (
                 <TouchableOpacity 
@@ -153,7 +209,7 @@ export function Home() {
           <SubTitle>News</SubTitle>
         </AreaSubtitle>
         <MoviesCarouselArea horizontal={true}>
-          {movies.map((movie: IMovie) => {
+          {moviesFive.map((movie: IMovie) => {
             if (movie.Poster !== "N/A") {
               return (
                 <TouchableOpacity 

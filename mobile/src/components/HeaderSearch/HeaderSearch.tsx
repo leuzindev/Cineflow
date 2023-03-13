@@ -1,14 +1,13 @@
-import { SafeAreaView } from "react-native-safe-area-context";
-import { StyleSheet, TouchableOpacity } from "react-native";
-
-import React, { useState } from "react";
+import { SafeAreaView, TouchableOpacity, StyleSheet } from "react-native";
 import { HamburgerSvg, LogoHome } from "../Header/styled";
 import { SearchInput } from "./styled";
 
+type HeaderProps = {
+  onTextChange: (text: string) => void;
+  onSubmitEditing: () => void;
+}
 
-
-
-export function HeaderSearch() {
+export function HeaderSearch({ onTextChange, onSubmitEditing }: HeaderProps) {
   const styles = StyleSheet.create({
     container: {
       backgroundColor: "#202024",
@@ -23,8 +22,7 @@ export function HeaderSearch() {
       color: "white",
     },
   });
-  
-  
+
   return (
     <SafeAreaView style={styles.container}>
       <HamburgerSvg />
@@ -32,11 +30,10 @@ export function HeaderSearch() {
         style={styles.placeholder}
         placeholderTextColor="#8A8A8A"
         placeholder="Qual filme está procurando?"
-        
+        onChangeText={onTextChange}
+        onSubmitEditing={onSubmitEditing}
       />
-      <TouchableOpacity
-       
-      >
+      <TouchableOpacity onPress={onSubmitEditing}>
         <LogoHome source={require("../../assets/search_icon.png")} />
       </TouchableOpacity>
     </SafeAreaView>
