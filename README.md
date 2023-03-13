@@ -58,7 +58,18 @@ O projeto é um aplicativo de streaming que oferece aos usuários acesso a uma a
     
 ---
 
-## Imagens do site
+## Navegação 
+
+https://user-images.githubusercontent.com/97266637/224825419-4e479033-0847-4142-9940-64bf1e6196cf.mp4
+
+<hr/>
+
+https://user-images.githubusercontent.com/97266637/224825447-2abc46ef-f9ff-4153-96de-8704f120bfbc.mp4
+
+
+
+
+## Imagens do App
 
 1 - Login e Registro
 <p align="center">
