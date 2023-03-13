@@ -8,8 +8,10 @@
 
 - [Descrição](#descrição)
 - [Como usar](#como-usar)
-- [Imagens](#imagens-do-site)
+- [Imagens](#imagens-do-app)
+- [Videos](#navegação)
 - [Author Info](#author-info)
+
 
 ---
 
@@ -72,27 +74,26 @@ https://user-images.githubusercontent.com/97266637/224825447-2abc46ef-f9ff-4153-
 ## Imagens do App
 
 1 - Login e Registro
+<p></p>
 <p align="center">
   <img src="https://user-images.githubusercontent.com/97266637/224822375-89b728c2-5dff-469c-b3ce-36e19cf92c40.png" />
   <img src="https://user-images.githubusercontent.com/97266637/224822384-dc9b6876-3dbb-4e9f-afe0-7636b34ebe80.png"/>
 </p>
-
 <hr/>
 2 - Perfils e Minha conta
+<p></p>
 <p align="center">
   <img src="https://user-images.githubusercontent.com/97266637/224822632-03b3a5f4-3b0a-4ce8-a1a9-82c57a24979b.png"/>
   <img src="https://user-images.githubusercontent.com/97266637/224823424-652fc72c-2103-4061-8cc7-b186bdeafa85.png"/>
 </p>
-
 <hr/>
 3 - Home-Page e Busca
+<p></p>
 <p align="center">
   <img src="https://user-images.githubusercontent.com/97266637/224822425-0b8ac31a-adc0-47c5-bdb9-201ae98a4dd6.png"/>
   <img src="https://user-images.githubusercontent.com/97266637/224822450-ba483727-9753-4cc7-aeb3-5aa667263a25.png"/>
 </p>
-
 <hr/>
-
 
 ## Author Info
 
